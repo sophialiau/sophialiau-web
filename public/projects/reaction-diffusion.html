@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+
+<head>
+    <title>Sophia Liau - Reaction Diffusion</title>
+    <meta charset="UTF-8">
+    <meta name = "viewport" content="width = device-wifth, initial-scale=1.0">
+  
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+  
+     <!-- style -->
+    <link rel="stylesheet" href="../styles/main.css">
+
+     <!-- tab icon -->
+     <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+     <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+     <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+     <link rel="manifest" href="../assets/site.webmanifest">
+  
+</head>
+
+<body>
+    <header>
+        <a href="../index.html">
+            <h1>Sophia S. Liau</h1>
+          </a>
+
+        <nav>
+            <ul>
+              <li><a href="../about.html">About Me</a></li>
+              <li><a href="../projects.html">Projects</a></li>
+              <li><a href = "../resume.html">Resume</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+              <li><a href ="../personal.html">Personal</a></li>
+            </ul>
+        </nav>
+
+    </header>
+
+    <main class="individual-page">
+        <section class="project-head">
+            <h2 class="project-title">Reaction Diffusion</h2>
+          
+            <div class="project-tags">
+              <span class="tag">April 2025</span>
+              <span class="tag">Algorithmic Systems</span>
+              <span class="tag">Personal Project</span>
+            </div>
+          
+            <p class="project-description">
+                This project was a just for fun project to model the Gray-Scott reaction-diffusion system.
+                This is a mathematical model that describes how two chemicals interact and diffuse in space, creating complex patterns.
+                Although many of my applications are not fully a product of the Gray-Scott model, I used it as a starting point to explore how reaction-diffusion systems can be used to create interesting visual effects.
+                The project was completed in Python with the usage of Cursor.
+            </p>
+
+            <!-- Project Links -->
+            <div class="project-links">
+                <a href="https://github.com/sophialiau/reaction-diffusion-model" target="_blank"><img src="../assets/logos/navygithub.png" alt="Github" /></a>
+              </div>
+
+        </section>
+
+        <section class="project-info">
+            <div class="project-info-box">
+          
+                <!-- Slideshow -->
+            <div class="project-slideshow">
+              <div class="slide fade">
+                <div class="slide-number">1 / 3</div>
+                <img src="../assets/projects/ReactionDiffusion/bacteria.png" alt="Slide 1" />
+              </div>
+              <div class="slide fade">
+                <div class="slide-number">2 / 13</div>
+                <img src="../assets/projects/ReactionDiffusion/leopard.png" alt="Slide 2" />
+              </div>
+              <div class="slide fade">
+                <div class="slide-number">3 / 13</div>
+                <img src="../assets/projects/ReactionDiffusion/zebra.png" alt="Slide 3" />
+              </div>
+          
+              <a class="prev" onclick="changeSlide(-1)">❮</a>
+              <a class="next" onclick="changeSlide(1)">❯</a>
+            </div>
+            </div>
+
+            <div class="project-info-box">
+                <h3>Technical Overview</h3>
+                <p>
+                    The Reaction Diffusion project was an implementation of the Gray-Scott system.
+                    Following the Fisher-KPP equation as follows, ∂u/∂t = D ∂²u/∂x² + ru(1 - u).
+                    The simulation calculates the concentration of two chemicals, U and V, over time.
+                    The system is governed by two main processes: diffusion, which spreads the chemicals across the grid, and reaction, which determines how the chemicals interact with each other.
+                    The project uses a grid-based approach, where each cell represents a point in space with specific concentrations of U and V.
+                </p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="contact-links">
+          <a class="linkedin" href="https://www.linkedin.com/in/sophia-liau-518209247/" target="_blank">
+              <img src="../assets/logos/navylinkedin.png" alt="LinkedIn Logo">
+          </a>
+          <a class="email" href="mailto:sophia.liau5@gmail.com" target="_blank">
+              <img src="../assets/logos/navymail.png" alt="Email Logo">
+          </a>
+          <a class="instagram" href="https://www.instagram.com/sophiasliau/" target="_blank">
+              <img src="../assets/logos/navyinstagram.png" alt="Instagram Logo">
+          </a>
+          <a class="github" href="https://github.com/sophialiau" target="_blank">
+              <img src="../assets/logos/navygithub.png" alt="GitHub Logo">
+          </a>
+      </div>
+        <p>© 2025 Sophia Liau. All rights reserved.</p>
+      </footer>
+
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/slide.js"></script>
+</body>
+</html>
