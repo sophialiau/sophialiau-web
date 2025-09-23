@@ -530,10 +530,10 @@
  /* LCD area */
  .screen-box {
      position: absolute;
-     left: 12%;
-     top: 30%;
+     left: 13.75%;
+     top: 25.1%;
      width: 47.6%;
-     height: 47.8%;
+     height: 51%;
      background: #000; /* makes the LCD look real */
      display: flex;
      align-items: center;
@@ -612,13 +612,28 @@
  }
 
  /* Navy caption bar under the camera */
- .caption-bar{
-     display:flex; gap:10px; align-items:center; justify-content:center;
-     background:#293241; color:#FFFFFF;
-     font-family:'Playfair Display', serif;
-     padding:12px 16px;
-     width: clamp(260px, var(--w), 920px);
+ .caption-bar {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 10px;
+
+     background: #293241;
+     color: #FFFFFF;
+     font-family: 'Playfair Display', serif;
+     padding: 12px 16px;
+
+     width: 240px;                     /* ⬅️ set fixed width */
+     height: 44px;                     /* ⬅️ optional: fix height too */
+     overflow: hidden;                /* hides overflowed text */
+     white-space: nowrap;            /* keeps long captions on one line */
+     text-overflow: ellipsis;        /* adds "..." if it’s too long */
+     box-sizing: border-box;
+
+     font-size: 1rem;
+     border-radius: 6px;
  }
+
  .caption-index{ opacity:.85; }
  .caption-bullet{ opacity:.6; }
 
