@@ -488,7 +488,114 @@
     justify-content: center;
   }
 
-  
+ /********************/
+ /*  PERSONAL DIGICAM */
+ /********************/
+ .personal-digicam{
+     display:grid;
+     justify-items:center;
+     gap: 12px;
+     /* keep camera + caption in view without scrolling on most screens */
+     padding: 16px 0 8px;
+ }
+
+ /* overall camera size; scales down on narrow screens */
+ .camera-wrap{
+     --w: min(92vw, 920px);
+     width: var(--w);
+     aspect-ratio: 5 / 4;            /* digi.png native ratio */
+     position: relative;
+     user-select: none;
+     filter: drop-shadow(0 10px 24px rgba(0,0,0,.25));
+ }
+
+ /* ===== CALIBRATION (from your PNG) =====
+    LCD approx: left 170px, top 335px, width 950px, height 765px on 2000×1600
+    Converted to percentages for perfect scaling.
+ */
+ .camera-wrap{
+     --screen-left:   8.5%;
+     --screen-top:   20.9%;
+     --screen-width: 47.5%;
+     --screen-height:47.8%;
+
+     /* dial hotspots (◀ ▶ around big wheel) */
+     --prev-left: 79.5%;
+     --prev-top:  60.9%;
+     --next-left: 91.0%;
+     --next-top:  60.9%;
+     --spot-size: 5.8%;
+ }
+
+ /* LCD area */
+ .screen-box{
+     position:absolute;
+     left: var(--screen-left);
+     top:  var(--screen-top);
+     width: var(--screen-width);
+     height: var(--screen-height);
+     overflow: hidden;
+     border-radius: 10px;
+     background: #000; /* keeps it looking like an LCD during image loads */
+ }
+
+ /* 1×1 collages fill the 4:3 LCD (no squish; gentle crop) */
+ .screen-img{
+     position:absolute; inset:0;
+     width: 100%; height: 100%;
+     object-fit: cover;
+     opacity: 0; transform: scale(.995);
+     transition: opacity .28s ease, transform .28s ease;
+ }
+ .screen-img.is-active{ opacity:1; transform: scale(1); }
+
+ /* pink camera on top, clicks pass through to hotspots */
+ .camera-img{
+     position:absolute; inset:0;
+     width:100%; height:100%; object-fit:contain;
+     pointer-events:none;
+ }
+
+ /* invisible but accessible dial buttons */
+ .hotspot{
+     position:absolute;
+     left: calc(var(--x) - var(--spot-size)/2);
+     top:  calc(var(--y) - var(--spot-size)/2);
+     width: var(--spot-size); height: var(--spot-size);
+     border-radius: 999px;
+     background: transparent;
+     border: 0;
+     cursor: pointer;
+     z-index: 3;
+ }
+ .prev{ --x: var(--prev-left); --y: var(--prev-top); }
+ .next{ --x: var(--next-left); --y: var(--next-top); }
+ .hotspot:focus-visible{
+     box-shadow: 0 0 0 3px #fff, 0 0 0 6px rgba(249,185,195,.85);
+ }
+ .hotspot:active::after{
+     content:""; position:absolute; inset:0; border-radius:inherit;
+     background: rgba(0,0,0,.10);
+ }
+
+ /* Navy caption bar under the camera */
+ .caption-bar{
+     display:flex; gap:10px; align-items:center; justify-content:center;
+     background:#293241; color:#FFFFFF;
+     font-family:'Playfair Display', serif;
+     padding:12px 16px;
+     width: clamp(260px, var(--w), 920px);
+ }
+ .caption-index{ opacity:.85; }
+ .caption-bullet{ opacity:.6; }
+
+ /* Fit both camera + caption on small phones */
+ @media (max-width: 520px){
+     .camera-wrap{ --w: 96vw; }
+     .camera-wrap{ --spot-size: 7.2%; }
+     .caption-bar{ padding:10px 12px; font-size:.95rem; }
+ }
+
 
  
   
