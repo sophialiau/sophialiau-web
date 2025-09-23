@@ -530,8 +530,8 @@
  /* LCD area */
  .screen-box {
      position: absolute;
-     left: 8.55%;
-     top: 20.15%;
+     left: 12%;
+     top: 30%;
      width: 47.6%;
      height: 47.8%;
      background: #000; /* makes the LCD look real */
