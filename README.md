@@ -1,8 +1,7 @@
 # Sophia Liau - Personal Website
 
-Hello! This is my personal website. 
-Initially I thought this would be my professional portfolio, however I have had a little too fun with the stylistic aspect of it all.
-So this is my informal, cute, fab personal site!
+Hello! This is my personal website. You can find all my professional information, such as my resume, project info & contacts here. 
+I also have a personal segment, where I like to have little more fun with my coding - including travel, interests etc. 
 
 ## Project Structure
 
@@ -17,21 +16,6 @@ So this is my informal, cute, fab personal site!
 
 ## Running the Website
 
-To run the website locally:
+I'm currently finishing it up, then will be hosting through Vercel. 
 
-1. Install dependencies:
-   ```
-   npm install
-   ```
-
-2. Start the development server:
-   ```
-   npm run dev
-   ```
-
-3. Open your browser and navigate to `http://localhost:3000`
-
-For production:
-```
-npm start
-```
+You could also run it on a local host, but I'd suggest waiting because it's still not done. (Good things take time)
