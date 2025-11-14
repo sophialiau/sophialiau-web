@@ -662,7 +662,7 @@
     display: flex;
     align-items: flex-start;
     gap: 40px;
-    width: 80%;              /* controls how wide the whole block is */
+    width: 90%;              /* controls how wide the whole block is */
     margin: 60px auto;
 }
 
@@ -672,7 +672,6 @@
     height: 300px;           
     object-fit: cover;
     border-radius: 0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 /* right-hand column */
@@ -689,7 +688,6 @@
     color: #ffffff;
     padding: 18px 24px;
     border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
     font-family: 'Playfair Display', serif;
 }
 
@@ -711,14 +709,12 @@
     color: #2c3149;
     padding: 16px 24px;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.10);
     font-family: 'Playfair Display', serif;
     width: 100%;            /* ⬅️ keeps it aligned with navy box */
 }
 
-.wear-detailsbox ul {
-    margin: 0 0 0 18px;
-    padding: 0;
-    font-size: 15px;
-    line-height: 1.5;
+.wear-detailsbox p {
+    margin: 0;
+    font-size: 14px;
+    text-align: center;
 }
