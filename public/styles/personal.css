@@ -654,7 +654,7 @@
     margin: 50px auto 80px auto;
     display: flex;
     flex-direction: column;
-    gap: 60px;
+    gap: 0;
 }
 
 /* whole row */
