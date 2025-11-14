@@ -669,9 +669,9 @@
 /* image stays fixed size */
 .wear-image {
     width: 300px;
-    height: 300px;           /* your “hard-coded” height */
+    height: 300px;           
     object-fit: cover;
-    border-radius: 12px;
+    border-radius: 0;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
@@ -680,8 +680,7 @@
     display: flex;
     flex-direction: column;
     gap: 12px;               /* space between navy + white box */
-    width: 550px;            /* ⬅️ this keeps the navy bar nice and wide */
-    max-width: 100%;
+    width: 100%;            /* ⬅️ this keeps the navy bar nice and wide */
 }
 
 /* navy bar */
@@ -714,6 +713,7 @@
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.10);
     font-family: 'Playfair Display', serif;
+    width: 100%;            /* ⬅️ keeps it aligned with navy box */
 }
 
 .wear-detailsbox ul {
