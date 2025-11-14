@@ -648,27 +648,68 @@
   /******************/
  /*    OUTFITs!    */
 /******************/
+/* layout for wearing page */
 .photo-list {
     width: 85%;
-    margin: 50px auto;
+    margin: 50px auto 80px auto;
     display: flex;
     flex-direction: column;
     gap: 60px;
 }
 
-/* each image + text pair */
+/* image + navy box row */
 .photo-pair {
     display: flex;
     align-items: flex-start;
     gap: 40px;
 }
 
-/* image sizing */
+/* image styling */
 .wear-image {
     width: 300px;
+    max-width: 40vw;
     border-radius: 12px;
     object-fit: cover;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* navy text box */
+.wear-textbox {
+    background-color: #2c3149; /* your navy */
+    color: #ffffff;
+    padding: 20px 24px;
+    border-radius: 12px;
+    font-family: 'Playfair Display', serif;
+    width: 100%;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
+}
+
+.wear-textbox h3 {
+    margin-top: 0;
+    margin-bottom: 8px;
+    font-size: 22px;
+}
+
+.wear-textbox p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* mobile: stack vertically again */
+@media (max-width: 768px) {
+    .photo-pair {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .wear-image {
+        max-width: 100%;
+    }
+
+    .wear-textbox {
+        width: 100%;
+    }
 }
 
 /* navy text box */
