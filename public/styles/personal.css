@@ -657,74 +657,68 @@
     gap: 60px;
 }
 
-/* image + navy box row */
+/* whole row */
 .photo-pair {
     display: flex;
     align-items: flex-start;
     gap: 40px;
+    width: 80%;              /* controls how wide the whole block is */
+    margin: 60px auto;
 }
 
-/* image styling */
+/* image stays fixed size */
 .wear-image {
     width: 300px;
-    max-width: 300px;
-    border-radius: 12px;
+    height: 300px;           /* your “hard-coded” height */
     object-fit: cover;
+    border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-
-/* container for navy + white boxes */
+/* right-hand column */
 .wear-info {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;  /* makes the two boxes distribute vertically */
-    max-height: 300px;               /* SAME AS IMAGE HEIGHT */
-    overflow: hidden;                /* prevents spilling out */
+    gap: 12px;               /* space between navy + white box */
+    width: 550px;            /* ⬅️ this keeps the navy bar nice and wide */
+    max-width: 100%;
 }
 
-/* navy title box */
+/* navy bar */
 .wear-textbox {
     background-color: #2c3149;
-    color: white;
-    padding: 20px 24px;
+    color: #ffffff;
+    padding: 18px 24px;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.18);
     font-family: 'Playfair Display', serif;
 }
 
 .wear-textbox h3 {
-    margin-top: 0;
-    margin-bottom: 8px;
+    margin: 0 0 6px 0;
     font-size: 22px;
+    text-align: center;
 }
 
 .wear-textbox p {
     margin: 0;
-    font-size: 16px;
-    line-height: 1.6;
+    font-size: 15px;
+    text-align: center;
 }
 
-/* pretty white details box */
+/* white details box – separate but same width */
 .wear-detailsbox {
     background-color: #ffffff;
     color: #2c3149;
-    padding: 18px 22px;
+    padding: 16px 24px;
     border-radius: 12px;
     box-shadow: 0 3px 10px rgba(0,0,0,0.10);
     font-family: 'Playfair Display', serif;
-    border: 1px solid rgba(0,0,0,0.05);
 }
 
-/* style the list */
 .wear-detailsbox ul {
-    margin: 6px 0 0 16px;
+    margin: 0 0 0 18px;
     padding: 0;
     font-size: 15px;
     line-height: 1.5;
 }
-
-.wear-detailsbox li {
-    margin-bottom: 4px;
-}
-
