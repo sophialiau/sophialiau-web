@@ -711,31 +711,3 @@
         width: 100%;
     }
 }
-
-/* navy text box */
-.wear-textbox {
-    background-color: #2c3149; /* your navy */
-    color: white;
-    padding: 20px 25px;
-    border-radius: 12px;
-    font-family: 'Playfair Display', serif;
-    width: 100%;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.18);
-}
-
-.wear-textbox h3 {
-    margin-top: 0;
-    font-size: 22px;
-}
-
-.wear-textbox p {
-    font-size: 16px;
-    line-height: 1.6;
-}
-
-
- 
-  
-  
-  
-  
