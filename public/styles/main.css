@@ -624,8 +624,9 @@ canvas#gameCanvas {
 
 .resume-download-grid {
   display: grid;
-  grid-template-columns: minmax(280px, 487.5px);
+  grid-template-columns: minmax(0, 1fr);
   gap: 25px;
+  width: 100%;
   max-width: 1000px;
   margin: 12.5px auto; /* Center the grid */
   justify-content: center;
@@ -755,6 +756,8 @@ canvas#gameCanvas {
   text-align: center;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
   line-height: 1.6;
+  box-sizing: border-box;
+  width: 100%;
   max-width: 1000px;
 }
 
