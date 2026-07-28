@@ -624,7 +624,7 @@ canvas#gameCanvas {
 
 .resume-download-grid {
   display: grid;
-  grid-template-columns: repeat(2, 487.5px);
+  grid-template-columns: minmax(280px, 487.5px);
   gap: 25px;
   max-width: 1000px;
   margin: 12.5px auto; /* Center the grid */
