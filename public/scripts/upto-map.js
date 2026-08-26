@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const controls = map.querySelector('.travel-map-controls');
     const popup = map.querySelector('.map-guide-popup');
     const popupContent = popup.querySelector('.map-guide-content');
-    const minScale = 1;
+    let minScale = .35;
     const maxScale = 4;
     let scale = 1;
     let x = 0;
@@ -66,8 +66,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const clampPosition = () => {
         const width = canvas.offsetWidth * scale;
         const height = canvas.offsetHeight * scale;
-        x = Math.min(0, Math.max(viewport.clientWidth - width, x));
-        y = Math.min(0, Math.max(viewport.clientHeight - height, y));
+        x = width <= viewport.clientWidth
+            ? (viewport.clientWidth - width) / 2
+            : Math.min(0, Math.max(viewport.clientWidth - width, x));
+        y = height <= viewport.clientHeight
+            ? (viewport.clientHeight - height) / 2
+            : Math.min(0, Math.max(viewport.clientHeight - height, y));
     };
 
     const render = () => {
@@ -76,7 +80,8 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const reset = () => {
-        scale = Math.max(minScale, viewport.clientWidth / canvas.offsetWidth);
+        minScale = Math.min(viewport.clientWidth / canvas.offsetWidth, viewport.clientHeight / canvas.offsetHeight);
+        scale = minScale;
         x = (viewport.clientWidth - canvas.offsetWidth * scale) / 2;
         y = (viewport.clientHeight - canvas.offsetHeight * scale) / 2;
         render();
@@ -114,6 +119,67 @@ document.addEventListener('DOMContentLoaded', () => {
         popup.setAttribute('aria-hidden', 'false');
     };
 
+    const pins = Array.from(map.querySelectorAll('.map-pin'));
+    const starPalette = [3, 4, 5, 6];
+    pins.forEach((pin, index) => {
+        pin.style.backgroundImage = `url('../assets/stars/${starPalette[index % starPalette.length]}.png')`;
+    });
+
+    const pinPoint = (pin) => ({
+        x: (parseFloat(pin.style.getPropertyValue('--x')) / 100) * canvas.offsetWidth,
+        y: (parseFloat(pin.style.getPropertyValue('--y')) / 100) * canvas.offsetHeight
+    });
+
+    const buildClusters = () => {
+        const ungrouped = new Set(pins);
+        const groups = [];
+        while (ungrouped.size) {
+            const group = [];
+            const queue = [ungrouped.values().next().value];
+            ungrouped.delete(queue[0]);
+            while (queue.length) {
+                const current = queue.shift();
+                group.push(current);
+                const currentPoint = pinPoint(current);
+                Array.from(ungrouped).forEach((candidate) => {
+                    const candidatePoint = pinPoint(candidate);
+                    if (Math.hypot(currentPoint.x - candidatePoint.x, currentPoint.y - candidatePoint.y) < 20) {
+                        ungrouped.delete(candidate);
+                        queue.push(candidate);
+                    }
+                });
+            }
+            if (group.length > 1) {
+                group.forEach((pin) => pin.classList.add('is-clustered'));
+                groups.push(group);
+            }
+        }
+        return groups;
+    };
+
+    const clusters = buildClusters();
+    const closeClusters = (except = null) => {
+        clusters.forEach((group) => {
+            if (group === except) return;
+            group.forEach((pin) => {
+                pin.classList.remove('cluster-open');
+                pin.style.removeProperty('--cluster-x');
+                pin.style.removeProperty('--cluster-y');
+            });
+        });
+    };
+
+    const expandCluster = (group) => {
+        closeClusters(group);
+        const radius = group.length > 6 ? 48 : 38;
+        group.forEach((pin, index) => {
+            const angle = ((Math.PI * 2) / group.length) * index - Math.PI / 2;
+            pin.style.setProperty('--cluster-x', `${Math.cos(angle) * radius}px`);
+            pin.style.setProperty('--cluster-y', `${Math.sin(angle) * radius}px`);
+            pin.classList.add('cluster-open');
+        });
+    };
+
     const organiseGuides = () => {
         const grid = document.querySelector('.travel-card-grid');
         const groups = {
@@ -148,6 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     viewport.addEventListener('pointerdown', (event) => {
         if (event.target.closest('.map-pin')) return;
+        closeClusters();
         dragging = true;
         lastX = event.clientX;
         lastY = event.clientY;
@@ -179,7 +246,14 @@ document.addEventListener('DOMContentLoaded', () => {
         zoomAt(action === 'zoom-in' ? 1.25 : 0.8, rect.left + rect.width / 2, rect.top + rect.height / 2);
     });
 
-    map.querySelectorAll('.map-pin').forEach((pin) => pin.addEventListener('click', () => openGuide(pin)));
+    pins.forEach((pin) => pin.addEventListener('click', () => {
+        const cluster = clusters.find((group) => group.includes(pin));
+        if (cluster && !pin.classList.contains('cluster-open')) {
+            expandCluster(cluster);
+            return;
+        }
+        openGuide(pin);
+    }));
     popup.querySelector('.map-guide-close').addEventListener('click', closePopup);
     document.addEventListener('keydown', (event) => { if (event.key === 'Escape') closePopup(); });
     window.addEventListener('resize', reset);
