@@ -1,1 +1,234 @@
-<!--TODO: Add project details and slideshow-->
+<!DOCTYPE html>
+
+<head>
+    <title>Sophia Liau - Liver Hepatocellular Carcinoma Analysis</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Monsieur+La+Doulaise&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="../styles/main.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+    <link rel="manifest" href="../assets/site.webmanifest">
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><h1>Sophia S. Liau</h1></a>
+        <nav>
+            <ul>
+              <li><a href="../about.html">About Me</a></li>
+              <li><a href="../projects.html">Projects</a></li>
+              <li><a href="../resume.html">Resume</a></li>
+              <li><a href="../contact.html">Contact</a></li>
+              <li><a href="../personal.html">Personal</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="individual-page">
+        <section class="project-head">
+            <h2 class="project-title">Liver Hepatocellular Carcinoma Analysis</h2>
+
+            <div class="project-tags">
+              <span class="tag">Fall 2025</span>
+              <span class="tag">Bioinformatics</span>
+              <span class="tag">BMEG 310</span>
+            </div>
+
+            <p class="project-description">
+                This team project investigated mutation, clinical and RNA-sequencing patterns in liver hepatocellular carcinoma using data from The Cancer Genome Atlas. We developed an R-based analysis pipeline to connect genomic variation and gene-expression structure with patient characteristics, cancer stage and multiple survival outcomes.
+            </p>
+
+            <div class="project-links">
+                <a href="https://github.com/sophialiau/BMEG310-project" target="_blank"><img src="../assets/logos/navygithub.png" alt="Liver carcinoma analysis on GitHub"></a>
+            </div>
+        </section>
+
+        <section class="project-info">
+            <div class="project-info-box">
+              <h3>Analysis Workflow</h3>
+              <div class="graphic-container">
+                <img src="../assets/projects/liverhepatocellular/flowchart.png" alt="Flowchart of the liver hepatocellular carcinoma analysis workflow" class="project-image">
+              </div>
+            </div>
+
+            <div class="project-info-box">
+              <h3>Mutation &amp; Clinical Analysis</h3>
+              <p>
+                We standardized TCGA patient identifiers, matched mutation records to clinical data and filtered for non-synonymous variants affecting coding regions. From these records, we constructed a binary gene-by-patient mutation matrix, calculated tumor mutation burden and explored relationships with age, sex, race and grouped cancer stage. Mutation-based patient clusters were evaluated across overall, disease-specific, progression-free and disease-free survival using Kaplan–Meier curves and Cox proportional-hazards models.
+              </p>
+            </div>
+
+            <div class="project-info-box">
+              <h3>Expression &amp; Pathway Analysis</h3>
+              <p>
+                RNA-sequencing counts were matched to clinical records, filtered and normalized with DESeq2 before variance-stabilizing transformation. Highly variable genes supported PCA and hierarchical clustering, while differential-expression comparisons characterized expression-defined patient groups. We also used Hallmark gene-set enrichment analysis to investigate the biological pathways represented by cluster-level expression differences.
+              </p>
+            </div>
+
+            <div class="project-info-box">
+              <h3>Tools &amp; Methods</h3>
+              <p>
+                R, R Markdown, TCGA clinical and genomic datasets, DESeq2, survival, survminer, ggplot2, dplyr, hierarchical clustering, PCA, differential expression, gene-set enrichment, Kaplan–Meier analysis and multivariable Cox regression.
+              </p>
+            </div>
+            <div class="project-info-box">
+              <h3>Full Analysis Report</h3>
+              <div class="project-slideshow">
+                <div class="slide fade">
+                  <div class="slide-number">1 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-0.jpg" alt="Liver hepatocellular carcinoma analysis report page 1">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">2 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-1.jpg" alt="Liver hepatocellular carcinoma analysis report page 2">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">3 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-2.jpg" alt="Liver hepatocellular carcinoma analysis report page 3">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">4 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-3.jpg" alt="Liver hepatocellular carcinoma analysis report page 4">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">5 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-4.jpg" alt="Liver hepatocellular carcinoma analysis report page 5">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">6 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-5.jpg" alt="Liver hepatocellular carcinoma analysis report page 6">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">7 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-6.jpg" alt="Liver hepatocellular carcinoma analysis report page 7">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">8 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-7.jpg" alt="Liver hepatocellular carcinoma analysis report page 8">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">9 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-8.jpg" alt="Liver hepatocellular carcinoma analysis report page 9">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">10 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-9.jpg" alt="Liver hepatocellular carcinoma analysis report page 10">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">11 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-10.jpg" alt="Liver hepatocellular carcinoma analysis report page 11">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">12 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-11.jpg" alt="Liver hepatocellular carcinoma analysis report page 12">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">13 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-12.jpg" alt="Liver hepatocellular carcinoma analysis report page 13">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">14 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-13.jpg" alt="Liver hepatocellular carcinoma analysis report page 14">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">15 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-14.jpg" alt="Liver hepatocellular carcinoma analysis report page 15">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">16 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-15.jpg" alt="Liver hepatocellular carcinoma analysis report page 16">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">17 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-16.jpg" alt="Liver hepatocellular carcinoma analysis report page 17">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">18 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-17.jpg" alt="Liver hepatocellular carcinoma analysis report page 18">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">19 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-18.jpg" alt="Liver hepatocellular carcinoma analysis report page 19">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">20 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-19.jpg" alt="Liver hepatocellular carcinoma analysis report page 20">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">21 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-20.jpg" alt="Liver hepatocellular carcinoma analysis report page 21">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">22 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-21.jpg" alt="Liver hepatocellular carcinoma analysis report page 22">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">23 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-22.jpg" alt="Liver hepatocellular carcinoma analysis report page 23">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">24 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-23.jpg" alt="Liver hepatocellular carcinoma analysis report page 24">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">25 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-24.jpg" alt="Liver hepatocellular carcinoma analysis report page 25">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">26 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-25.jpg" alt="Liver hepatocellular carcinoma analysis report page 26">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">27 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-26.jpg" alt="Liver hepatocellular carcinoma analysis report page 27">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">28 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-27.jpg" alt="Liver hepatocellular carcinoma analysis report page 28">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">29 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-28.jpg" alt="Liver hepatocellular carcinoma analysis report page 29">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">30 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-29.jpg" alt="Liver hepatocellular carcinoma analysis report page 30">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">31 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-30.jpg" alt="Liver hepatocellular carcinoma analysis report page 31">
+                </div>
+                <div class="slide fade">
+                  <div class="slide-number">32 / 32</div>
+                  <img src="../assets/projects/liverhepatocellular/a137d1e2-60e3-4663-9b7b-c29834e6f26a-31.jpg" alt="Liver hepatocellular carcinoma analysis report page 32">
+                </div>
+                <a class="prev" onclick="changeSlide(-1)">❮</a>
+                <a class="next" onclick="changeSlide(1)">❯</a>
+              </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="contact-links">
+          <a class="linkedin" href="https://www.linkedin.com/in/sophia-liau-518209247/" target="_blank"><img src="../assets/logos/navylinkedin.png" alt="LinkedIn Logo"></a>
+          <a class="email" href="mailto:sophia.liau5@gmail.com" target="_blank"><img src="../assets/logos/navymail.png" alt="Email Logo"></a>
+          <a class="instagram" href="https://www.instagram.com/sophiasliau/" target="_blank"><img src="../assets/logos/navyinstagram.png" alt="Instagram Logo"></a>
+          <a class="github" href="https://github.com/sophialiau" target="_blank"><img src="../assets/logos/navygithub.png" alt="GitHub Logo"></a>
+        </div>
+        <p>© 2026 Sophia Liau. All rights reserved.</p>
+    </footer>
+
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/slide.js"></script>
+</body>
+</html>

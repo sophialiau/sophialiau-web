@@ -1039,6 +1039,16 @@ canvas#gameCanvas {
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
+.project-video {
+  display: block;
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  margin: 20px auto;
+  background-color: #000000;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
 .instagram-embed-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
