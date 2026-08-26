@@ -1,22 +1,33 @@
-let slideIndex = 1;
-  showSlide(slideIndex);
+document.querySelectorAll(".project-slideshow").forEach((slideshow) => {
+  slideshow.dataset.slideIndex = "1";
+  showSlide(1, slideshow);
+});
 
-  function changeSlide(n) {  
-    showSlide(slideIndex += n);
-  }
+function changeSlide(step, trigger) {
+  const slideshow = trigger
+    ? trigger.closest(".project-slideshow")
+    : document.querySelector(".project-slideshow");
 
-  function showSlide(n) {
-    const slides = document.querySelectorAll(".slide");
-    if (slides.length === 0) return;
+  if (!slideshow) return;
 
-    if (n > slides.length) slideIndex = 1;
-    if (n < 1) slideIndex = slides.length;
+  const currentIndex = Number(slideshow.dataset.slideIndex || 1);
+  showSlide(currentIndex + step, slideshow);
+}
 
-    slides.forEach((slide, i) => {
-      slide.style.display = i + 1 === slideIndex ? "block" : "none";
-      const numberLabel = slide.querySelector(".slide-number");
-      if (numberLabel) {
-        numberLabel.textContent = `${i + 1} / ${slides.length}`;
-      }
-    });
-  }
+function showSlide(index, slideshow) {
+  const slides = slideshow.querySelectorAll(".slide");
+  if (slides.length === 0) return;
+
+  let nextIndex = index;
+  if (nextIndex > slides.length) nextIndex = 1;
+  if (nextIndex < 1) nextIndex = slides.length;
+  slideshow.dataset.slideIndex = String(nextIndex);
+
+  slides.forEach((slide, slidePosition) => {
+    slide.style.display = slidePosition + 1 === nextIndex ? "block" : "none";
+    const numberLabel = slide.querySelector(".slide-number");
+    if (numberLabel) {
+      numberLabel.textContent = `${slidePosition + 1} / ${slides.length}`;
+    }
+  });
+}
