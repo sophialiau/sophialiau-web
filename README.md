@@ -16,6 +16,4 @@ I also have a personal segment, where I like to have little more fun with my cod
 
 ## Running the Website
 
-I'm currently finishing it up, then will be hosting through Vercel. 
-
-You could also run it on a local host, but I'd suggest waiting because it's still not done. (Good things take time)
+It's up and running @ https://www.sophialiau.com/
