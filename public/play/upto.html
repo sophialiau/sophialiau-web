@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <head>
-    <title>Sophia Liau - Personal</title>
+    <title>Up To - Sophia Liau</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -56,11 +56,103 @@
 </div>
 
 <main>
-    <section class="get-to-know">
-        <div class="get-to-know-content">
-            <p>page in progress! xo</p>
-            <!-- I'm thinking of doing an interactive map of places i've been.-->
-            <!-- I think it'll have pins over a map with one image from the location + year.-->
+    <section class="travel-intro">
+        <p class="travel-kicker">what i've been</p>
+        <h1>up to</h1>
+        <p>little notes from the places I call home, visit often, or still daydream about.</p>
+    </section>
+
+    <section class="travel-map-section" aria-labelledby="map-title">
+        <div class="travel-section-heading">
+            <h2 id="map-title">places, plotted</h2>
+            <p>Drag to wander, scroll to zoom, or choose a pink city.</p>
+        </div>
+        <div class="travel-map-shell" id="travel-map">
+            <div class="travel-map-controls" aria-label="Map controls">
+                <button type="button" data-map-action="zoom-in" aria-label="Zoom in">+</button>
+                <button type="button" data-map-action="zoom-out" aria-label="Zoom out">−</button>
+                <button type="button" data-map-action="reset" aria-label="Reset map">↺</button>
+            </div>
+            <div class="travel-map-viewport">
+                <div class="travel-map-canvas">
+                    <svg class="travel-world" viewBox="0 0 1200 600" role="img" aria-label="Stylized world map showing Sophia's destinations">
+                        <rect width="1200" height="600" class="map-ocean"/>
+                        <g class="map-land">
+                            <path d="M52 97 116 58 210 50 270 77 322 70 372 112 355 151 313 164 296 211 253 234 226 282 181 289 153 252 120 231 98 189 58 166Z"/>
+                            <path d="M297 290 350 308 389 345 409 402 398 467 367 537 338 519 326 457 305 411 277 354Z"/>
+                            <path d="M510 97 572 69 648 76 687 97 749 83 817 100 875 83 950 95 1023 121 1096 158 1115 199 1078 226 1019 217 976 248 921 231 873 250 835 222 790 223 744 195 709 205 679 174 640 179 610 155 570 163 533 142Z"/>
+                            <path d="M576 198 645 203 688 243 700 299 675 376 638 445 599 426 579 371 554 323 548 257Z"/>
+                            <path d="M993 371 1051 350 1115 382 1138 430 1099 467 1037 457 1003 420Z"/>
+                            <path d="M1088 254 1115 236 1134 259 1123 296 1097 291Z"/>
+                        </g>
+                        <g class="map-borders" aria-hidden="true">
+                            <path d="M64 154 132 146 188 161 244 149 307 164M116 231 166 214 226 222 276 203M180 289 205 245 253 234M322 70 313 112 355 151M305 411 350 388 398 402M326 457 374 452M548 257 607 264 688 243M579 371 635 348 675 376M610 155 640 179 679 174M687 97 709 205M744 195 790 164 835 222M873 100 873 250M950 95 921 231M1019 121 1019 217M1003 420 1051 404 1099 467"/>
+                        </g>
+                    </svg>
+                    <div class="travel-pins" aria-label="Destination cities">
+                        <button class="map-pin" style="--x:15.8%;--y:30.8%" data-target="regina"><span>Regina</span></button>
+                        <button class="map-pin" style="--x:11.9%;--y:32%" data-target="vancouver"><span>Vancouver</span></button>
+                        <button class="map-pin" style="--x:6.3%;--y:48.3%" data-target="honolulu"><span>Honolulu</span></button>
+                        <button class="map-pin" style="--x:31.8%;--y:79.2%" data-target="buenos-aires"><span>Buenos Aires</span></button>
+                        <button class="map-pin" style="--x:48.8%;--y:30.3%" data-target="paris"><span>Paris</span></button>
+                        <button class="map-pin" style="--x:49.2%;--y:34.2%" data-target="marseille"><span>Marseille</span></button>
+                        <button class="map-pin" style="--x:47.5%;--y:28.3%" data-target="london"><span>London</span></button>
+                        <button class="map-pin" style="--x:46.7%;--y:27.2%" data-target="stratford"><span>Stratford-upon-Avon</span></button>
+                        <button class="map-pin" style="--x:12.7%;--y:42.5%" data-target="palo-alto"><span>Palo Alto</span></button>
+                        <button class="map-pin" style="--x:11.9%;--y:45%" data-target="carmel"><span>Carmel + Monterey</span></button>
+                        <button class="map-pin" style="--x:13.5%;--y:42.8%" data-target="yosemite"><span>Yosemite</span></button>
+                        <button class="map-pin" style="--x:11.8%;--y:41.3%" data-target="san-francisco"><span>San Francisco</span></button>
+                        <button class="map-pin" style="--x:86.3%;--y:39.2%" data-target="tokyo"><span>Tokyo</span></button>
+                        <button class="map-pin" style="--x:84.2%;--y:46.7%" data-target="naha"><span>Naha</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:12.4%;--y:33.5%" aria-label="Seattle — childhood log"><span>Seattle</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:14.8%;--y:30.7%" aria-label="Canmore — childhood log"><span>Canmore</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:14.1%;--y:28.5%" aria-label="Jasper — childhood log"><span>Jasper</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:14.5%;--y:30%" aria-label="Banff — childhood log"><span>Banff</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:22.5%;--y:31%" aria-label="Montreal — childhood log"><span>Montreal</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:21.6%;--y:31.6%" aria-label="Ottawa — childhood log"><span>Ottawa</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:23.5%;--y:29.8%" aria-label="Quebec City — childhood log"><span>Quebec City</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:21.5%;--y:43%" aria-label="Orlando, Florida — childhood log"><span>Orlando</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:11.3%;--y:36.2%" aria-label="Cannon Beach — childhood log"><span>Cannon Beach</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:15.2%;--y:31.5%" aria-label="Calgary — childhood log"><span>Calgary</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:15.3%;--y:27.4%" aria-label="Edmonton — childhood log"><span>Edmonton</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:18.2%;--y:29.3%" aria-label="Winnipeg — childhood log"><span>Winnipeg</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:83%;--y:44%" aria-label="Taipei, Taiwan — childhood log"><span>Taipei</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:13%;--y:45.5%" aria-label="Los Angeles — childhood log"><span>Los Angeles</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:13.4%;--y:47.2%" aria-label="San Diego — childhood log"><span>San Diego</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:11.7%;--y:35%" aria-label="Portland — childhood log"><span>Portland</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:86%;--y:40.4%" aria-label="Hakone, Japan — childhood log"><span>Hakone</span></button>
+                        <button class="map-pin map-pin-childhood" style="--x:87%;--y:32.5%" aria-label="Hokkaido, Japan — childhood log"><span>Hokkaido</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="travel-map-key" aria-label="Map legend">
+            <span><i class="key-dot key-dot-current"></i>field notes</span>
+            <span><i class="key-dot key-dot-childhood"></i>childhood logs</span>
+        </div>
+        <details class="childhood-log">
+            <summary>open the childhood logs</summary>
+            <p>Seattle · Canmore · Jasper · Banff · Montreal · Ottawa · Quebec City · Orlando · Cannon Beach · Calgary · Edmonton · Winnipeg · Taipei · Los Angeles · San Diego · Portland · Hakone · Hokkaido</p>
+        </details>
+    </section>
+
+    <section class="travel-journal" aria-labelledby="journal-title">
+        <div class="travel-section-heading"><h2 id="journal-title">the field notes</h2></div>
+        <div class="travel-card-grid">
+            <article class="travel-card" id="regina"><img src="../assets/pictures/regina.jpg" alt="A memory from Regina" loading="lazy"><div class="travel-card-copy"><p class="travel-date">home</p><h3>Regina, SK</h3><dl><dt>eat</dt><dd>Avenue Restaurant</dd><dt>stay</dt><dd>In my childhood home, duh.</dd><dt>do</dt><dd>See family &amp; friends.</dd></dl></div></article>
+            <article class="travel-card" id="vancouver"><img src="../assets/pictures/vancouver.jpg" alt="A memory from Vancouver" loading="lazy"><div class="travel-card-copy"><p class="travel-date">currently</p><h3>Vancouver, BC</h3><dl><dt>eat</dt><dd>Oddfish</dd><dt>stay</dt><dd>In my big girl apartment!</dd><dt>do</dt><dd>Jaybird, drinks at Hotel Georgia with the girls, and vintage shopping on Main St.</dd></dl></div></article>
+            <article class="travel-card" id="honolulu"><img src="../assets/pictures/honolulu.jpg" alt="A memory from Honolulu" loading="lazy"><div class="travel-card-copy"><p class="travel-date">February 2025</p><h3>Honolulu, USA</h3><dl><dt>eat</dt><dd>Monkeypod</dd><dt>stay</dt><dd>Aulani in Ko Olina</dd><dt>do</dt><dd>Snorkel, paddle board pilates, and drive up to the North Shore.</dd></dl></div></article>
+            <article class="travel-card" id="buenos-aires"><img src="../assets/pictures/buenosaires.JPG" alt="A memory from Buenos Aires" loading="lazy"><div class="travel-card-copy"><p class="travel-date">July 2025</p><h3>Buenos Aires, Argentina</h3><dl><dt>eat</dt><dd>Mecha Fuego Porteño</dd><dt>stay</dt><dd>A random Airbnb in Villa Devoto—my brother played for a fútbol team out there.</dd><dt>do</dt><dd>Window shop in Palermo, visit Museo Nacional de Bellas Artes, then get Lucciano’s or Rapanui ice cream.</dd></dl></div></article>
+            <article class="travel-card" id="paris"><img src="../assets/pictures/paris.jpg" alt="A memory from Paris" loading="lazy"><div class="travel-card-copy"><p class="travel-date">August 2025</p><h3>Paris, France</h3><dl><dt>eat</dt><dd>Camille in Marais</dd><dt>stay</dt><dd>You don’t want to stay here (ahem).</dd><dt>do</dt><dd>Paris Museum Pass, Vin sur la Seine, shop in Marais, and dream a little.</dd></dl></div></article>
+            <article class="travel-card" id="marseille"><img src="../assets/pictures/marseille.jpg" alt="A memory from Marseille" loading="lazy"><div class="travel-card-copy"><p class="travel-date">August 2025</p><h3>Marseille, France</h3><dl><dt>eat</dt><dd>Dos Hermanas</dd><dt>stay</dt><dd>New Hôtel Le Quai</dd><dt>do</dt><dd>Bleu Evasion boat tour, Escaliers du Cours Julien, and a melon slushie.</dd></dl></div></article>
+            <article class="travel-card" id="london"><img src="../assets/pictures/london.jpg" alt="A memory from London" loading="lazy"><div class="travel-card-copy"><p class="travel-date">August 2025</p><h3>London, England</h3><dl><dt>eat</dt><dd>Basic but true: Dishoom.</dd><dt>stay</dt><dd>Any Locke property</dd><dt>do</dt><dd>Shop at Selfridges—or drag a man around Selfridges—visit the Churchill War Rooms, and brunch at Megan’s on the High Street.</dd></dl></div></article>
+            <article class="travel-card" id="stratford"><img src="../assets/pictures/stratford.jpg" alt="A memory from Stratford-upon-Avon" loading="lazy"><div class="travel-card-copy"><p class="travel-date">August 2025</p><h3>Stratford-upon-Avon, England</h3><dl><dt>eat</dt><dd>ASK Italian—get a Sarti Spritz.</dd><dt>stay</dt><dd>With a friend’s family</dd><dt>do</dt><dd>Listen to stories about Josh’s childhood, walk along the canal, admire the swans, and dance under streetlights.</dd></dl></div></article>
+            <article class="travel-card" id="palo-alto"><img src="../assets/pictures/paloalto.jpg" alt="A memory from Palo Alto" loading="lazy"><div class="travel-card-copy"><p class="travel-date">constantly</p><h3>Palo Alto, USA</h3><dl><dt>eat</dt><dd>Delarosa? Haven’t tried enough nice dinners to gauge.</dd><dt>stay</dt><dd>At a friend’s</dd><dt>do</dt><dd>Shop at Stanford Shopping Center and along University Ave, visit Trader Joe’s, and bother said friend.</dd></dl></div></article>
+            <article class="travel-card" id="carmel"><img src="../assets/pictures/carmel.jpg" alt="A memory from Carmel-by-the-Sea and Monterey" loading="lazy"><div class="travel-card-copy"><p class="travel-date">June 2026</p><h3>Carmel-by-the-Sea + Monterey, USA</h3><dl><dt>eat</dt><dd>Casanova</dd><dt>stay</dt><dd>Martine Inn</dd><dt>do</dt><dd>Walk along the water in Pacific Grove, drive down to Bixby Bridge, and get a souvenir somewhere in Carmel.</dd></dl></div></article>
+            <article class="travel-card" id="yosemite"><img src="../assets/pictures/yosemite.JPG" alt="A memory from Yosemite National Park" loading="lazy"><div class="travel-card-copy"><p class="travel-date">August 2026</p><h3>Yosemite National Park, USA</h3><dl><dt>eat</dt><dd>Trader Joe’s treats + AutoCamp Kitchen</dd><dt>stay</dt><dd>AutoCamp Yosemite</dd><dt>do</dt><dd>Outdoorsy things? Just kidding. Rent bikes from Curry Village, go up to Glacier Point, and hike Sentinel Dome + Taft Point.</dd></dl></div></article>
+            <article class="travel-card travel-card-coming" id="san-francisco"><div class="travel-photo-placeholder"><span>next stop...</span></div><div class="travel-card-copy"><p class="travel-date">coming soon</p><h3>San Francisco, USA</h3><p class="travel-coming-copy">Eat, stay, and do recommendations pending a little field research.</p></div></article>
+            <article class="travel-card" id="tokyo"><img src="../assets/pictures/tokyo.jpg" alt="A memory from Tokyo" loading="lazy"><div class="travel-card-copy"><p class="travel-date">constantly</p><h3>Tokyo, Japan</h3><dl><dt>eat</dt><dd>Tbh, it’s been a while. Will report back in December.</dd><dt>stay</dt><dd>Disneyland Hotel—my family just loves Disney hospitality.</dd><dt>do</dt><dd>If I were still a kid, I’d eat up a KidZania visit. But alas, I am not.</dd></dl></div></article>
+            <article class="travel-card" id="naha"><img src="../assets/pictures/naha.jpg" alt="A memory from Naha" loading="lazy"><div class="travel-card-copy"><p class="travel-date">constantly</p><h3>Naha, Japan</h3><dl><dt>eat</dt><dd>黒門徳乃介 or La SIMA in the Naha Terrace</dd><dt>stay</dt><dd>Daiwa Roynet in Omoromachi—basically next to my grandparents’ place.</dd><dt>do</dt><dd>Hang out with my grandparents, visit Kokusai Dori, and wander Shurijo Castle Park.</dd></dl></div></article>
         </div>
     </section>
 </main>
@@ -85,7 +177,7 @@
 
 <script src="../scripts/app.js"></script>
 <script src="../scripts/navigation.js"></script>
-<script src="../scripts/personal-digicam.js"></script>
+<script src="../scripts/upto-map.js"></script>
 
 </body>
 </html>
