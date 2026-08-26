@@ -903,3 +903,86 @@
     .map-guide-popup { left: 10px; bottom: 10px; width: calc(100% - 20px); max-height: calc(100% - 20px); }
     .map-guide-popup img { height: 150px; }
 }
+
+/******************/
+/*     LOVING     */
+/******************/
+.loving-intro {
+    background: #293241;
+    color: white;
+    margin: 20px 0 0;
+    padding: 58px 24px 52px;
+    text-align: center;
+}
+.loving-intro h1 {
+    color: white;
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: clamp(5rem, 11vw, 8.5rem);
+    line-height: .72;
+    margin: 12px 0 30px;
+}
+.loving-intro p { color: white; margin: 0; }
+.loving-intro .loving-kicker { color: #f5a9b8; font-size: .75rem; letter-spacing: .26em; text-transform: uppercase; }
+
+.loving-canvas {
+    position: relative;
+    background: rgba(254, 241, 243, .9);
+    border: 7px solid #293241;
+    border-top: 0;
+    padding: clamp(28px, 5vw, 72px);
+    overflow: hidden;
+}
+.loving-field {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-auto-flow: dense;
+    grid-auto-rows: minmax(38px, auto);
+    align-items: center;
+    gap: clamp(10px, 1.6vw, 24px);
+}
+.love-thought {
+    --turn: 0deg;
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 60px;
+    padding: 10px 14px;
+    color: #293241;
+    font-size: clamp(.82rem, 1.35vw, 1.08rem);
+    line-height: 1.35;
+    text-align: center;
+    transform: rotate(var(--turn));
+    transition: transform .18s ease, color .18s ease, background .18s ease;
+}
+.love-thought:hover { transform: rotate(0deg) scale(1.045); z-index: 3; }
+.love-thought.is-note { background: white; border: 2px solid #293241; box-shadow: 6px 6px 0 #f5a9b8; }
+.love-thought.is-pink { background: #f5a9b8; border: 2px solid #293241; }
+.love-thought.is-navy { background: #293241; color: white; }
+.love-thought.is-navy::after { content: '✦'; position: absolute; right: 7px; top: 3px; color: #f5a9b8; }
+.love-thought.is-script {
+    color: #bb4965;
+    font-family: 'Monsieur La Doulaise', cursive;
+    font-size: clamp(2.25rem, 4vw, 4.4rem);
+    line-height: .8;
+    padding-block: 24px;
+}
+.love-thought.is-whisper { color: #8d3d54; font-style: italic; font-size: .82rem; }
+.love-thought.is-quote::before, .love-thought.is-quote::after { color: #f07691; font-size: 1.8em; line-height: 0; }
+.love-thought.is-quote { display: flex; align-items: center; justify-content: center; }
+.love-thought.is-quote::before { content: '“'; margin-right: 4px; }
+.love-thought.is-quote::after { content: '”'; margin-left: 4px; }
+.love-thought.is-underline { text-decoration: underline; text-decoration-color: #f07691; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+.love-star { width: clamp(30px, 4vw, 58px); aspect-ratio: 1; object-fit: contain; justify-self: center; transform: rotate(var(--turn)); }
+.loving-footnote { color: #293241; margin: 58px 0 0; text-align: right; font-style: italic; font-size: .85rem; }
+
+@media (max-width: 760px) {
+    .loving-field { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
+    .love-thought { grid-column: span var(--mobile-span, 3) !important; }
+}
+
+@media (max-width: 440px) {
+    .loving-canvas { padding: 26px 14px; }
+    .loving-field { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .love-thought { grid-column: span 1 !important; min-height: 78px; }
+    .love-thought.is-wide, .love-thought.is-script { grid-column: 1 / -1 !important; }
+}
