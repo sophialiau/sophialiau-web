@@ -869,6 +869,7 @@
 .travel-journal .continent-guide-title { background: #f5a9b8; color: #293241; text-align: left; padding: 14px 20px; margin: 0; font-size: 1.45rem; }
 .continent-guide-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; padding-top: 12px; }
 .travel-guide { background: white; border: 3px solid #293241; }
+.travel-guide:hover, .travel-guide:focus-within { border-color: #f07691; }
 .travel-guide > summary { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 18px 20px; cursor: pointer; list-style: none; color: #293241; }
 .travel-guide > summary::-webkit-details-marker { display: none; }
 .travel-guide > summary::after { content: '+'; color: #bb4965; font-size: 1.5rem; }
@@ -886,10 +887,6 @@
 .travel-card dt { color: #bb4965; font-weight: 700; font-style: italic; }
 .travel-card dd { color: #293241; line-height: 1.55; }
 .travel-coming-copy { color: #293241; text-align: left; }
-.travel-card.is-highlighted { animation: travel-highlight 1.1s ease; }
-
-@keyframes travel-highlight { 50% { box-shadow: 10px 10px 0 #f07691, 0 0 0 6px #f07691; } }
-
 @media (max-width: 850px) {
     .continent-guide-list { grid-template-columns: 1fr; }
     .travel-card img, .travel-photo-placeholder { height: min(95vw, 520px); }
@@ -908,11 +905,22 @@
 /*     LOVING     */
 /******************/
 .loving-intro {
+    position: relative;
     background: #293241;
     color: white;
     margin: 20px 0 0;
     padding: 58px 24px 52px;
     text-align: center;
+}
+.loving-sparkle {
+    position: absolute;
+    right: clamp(24px, 7vw, 90px);
+    bottom: 24px;
+    width: clamp(70px, 9vw, 125px);
+    height: auto;
+    opacity: .9;
+    transform: rotate(8deg);
+    pointer-events: none;
 }
 .loving-intro h1 {
     color: white;
@@ -955,7 +963,7 @@
     transition: transform .18s ease, color .18s ease, background .18s ease;
 }
 .love-thought:hover { transform: rotate(0deg) scale(1.045); z-index: 3; }
-.love-thought.is-note { background: white; border: 2px solid #293241; box-shadow: 6px 6px 0 #f5a9b8; }
+.love-thought.is-note { background: white; border: 2px solid #293241; box-shadow: none; }
 .love-thought.is-pink { background: #f5a9b8; border: 2px solid #293241; }
 .love-thought.is-navy { background: #293241; color: white; }
 .love-thought.is-navy::after { content: '✦'; position: absolute; right: 7px; top: 3px; color: #f5a9b8; }
@@ -973,11 +981,26 @@
 .love-thought.is-quote::after { content: '”'; margin-left: 4px; }
 .love-thought.is-underline { text-decoration: underline; text-decoration-color: #f07691; text-decoration-thickness: 3px; text-underline-offset: 6px; }
 .love-star { width: clamp(30px, 4vw, 58px); aspect-ratio: 1; object-fit: contain; justify-self: center; transform: rotate(var(--turn)); }
+.love-visual {
+    display: block;
+    width: 100%;
+    max-height: 260px;
+    object-fit: contain;
+    justify-self: center;
+    transform: rotate(var(--turn));
+    transform-origin: center;
+    transition: transform .2s ease;
+    filter: none;
+}
+.love-visual.is-wide { max-height: 180px; }
+.love-visual.is-tall { max-height: 320px; }
+.love-visual:hover { transform: rotate(0deg) scale(1.05); z-index: 4; }
 .loving-footnote { color: #293241; margin: 58px 0 0; text-align: right; font-style: italic; font-size: .85rem; }
 
 @media (max-width: 760px) {
     .loving-field { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 12px; }
     .love-thought { grid-column: span var(--mobile-span, 3) !important; }
+    .love-visual { grid-column: span var(--mobile-span, 3) !important; max-height: 220px; }
 }
 
 @media (max-width: 440px) {
@@ -985,4 +1008,7 @@
     .loving-field { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .love-thought { grid-column: span 1 !important; min-height: 78px; }
     .love-thought.is-wide, .love-thought.is-script { grid-column: 1 / -1 !important; }
+    .love-visual { grid-column: span 1 !important; max-height: 180px; }
+    .love-visual.is-wide { grid-column: 1 / -1 !important; max-height: 140px; }
+    .loving-sparkle { width: 58px; right: 12px; bottom: 14px; opacity: .72; }
 }

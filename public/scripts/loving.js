@@ -45,8 +45,33 @@ document.addEventListener('DOMContentLoaded', () => {
     const hash = (text) => Array.from(text).reduce((total, character) => ((total * 31) + character.charCodeAt(0)) >>> 0, 7);
     const styles = ['is-note', 'is-pink', 'is-whisper', 'is-underline', 'is-navy'];
     const starColors = [3, 4, 5, 6];
+    const visualAssets = new Map([
+        [2,  { file: 'brekkie.png', alt: 'A homemade breakfast plate', span: 3 }],
+        [9,  { file: 'ANCHOIS.png', alt: 'A blue ceramic anchovy dish', span: 4, wide: true }],
+        [15, { file: 'milo.png', alt: 'Milo lounging', span: 4, wide: true }],
+        [23, { file: 'crudo.png', alt: 'A citrus crudo dish', span: 3 }],
+        [31, { file: 'horsechief.png', alt: 'A folded horse-print scarf', span: 3 }],
+        [39, { file: 'yutori.png', alt: 'A flaky pastry from Yutori', span: 3 }],
+        [47, { file: 'trophy.png', alt: 'Department Club of the Year trophy', span: 3, tall: true }],
+        [56, { file: 'pcb.png', alt: 'A custom pink printed circuit board', span: 3 }],
+        [65, { file: 'loverspoint.png', alt: 'A hand-painted Lovers Point keepsake', span: 3 }],
+        [74, { file: 'p-a-r.png', alt: 'A pain aux raisins pastry', span: 3 }]
+    ]);
 
     loves.forEach((love, index) => {
+        const visual = visualAssets.get(index);
+        if (visual) {
+            const image = document.createElement('img');
+            image.className = `love-visual${visual.wide ? ' is-wide' : ''}${visual.tall ? ' is-tall' : ''}`;
+            image.src = `../assets/loving/${visual.file}`;
+            image.alt = visual.alt;
+            image.loading = 'lazy';
+            image.style.gridColumn = `span ${visual.span}`;
+            image.style.setProperty('--mobile-span', visual.wide ? 6 : 3);
+            image.style.setProperty('--turn', `${((index % 7) - 3) * 1.2}deg`);
+            field.appendChild(image);
+        }
+
         if (index > 0 && index % 13 === 0) {
             const star = document.createElement('img');
             star.className = 'love-star';
