@@ -1,0 +1,21 @@
+{
+  "name": "Sophia Liau — Portfolio",
+  "short_name": "Sophia Liau",
+  "icons": [
+    {
+      "src": "android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "../index.html",
+  "scope": "../",
+  "theme_color": "#293241",
+  "background_color": "#FEF1F3",
+  "display": "standalone"
+}
