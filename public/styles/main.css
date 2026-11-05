@@ -1070,14 +1070,51 @@ canvas#gameCanvas {
 }
 
 /* Technical portfolio highlights and project imagery */
-.portfolio-intro, .portfolio-download {
+.portfolio-heading {
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto 25px;
+  padding: clamp(24px, 4vw, 40px) 20px;
+  background: #293241;
   text-align: center;
-  color: #293241;
-  margin: 0 0 20px;
 }
-.portfolio-download a {
+.portfolio-heading h2 {
+  font-family: 'Monsieur La Doulaise', cursive;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  color: #fff;
+  margin: 0 0 16px;
+}
+.portfolio-heading .portfolio-intro {
+  max-width: 620px;
+  margin: 0 auto 24px;
+  color: #fff;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+.portfolio-heading .portfolio-download {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 6px 16px;
+  max-width: 100%;
+  min-height: 48px;
+  padding: 12px 20px;
+  background: #fef1f3;
+  border: 1px solid #fef1f3;
   color: #293241;
-  text-underline-offset: 4px;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: background-color .2s ease, border-color .2s ease;
+}
+.portfolio-heading .portfolio-download:hover {
+  background: #f9b9c3;
+  border-color: #f9b9c3;
+  color: #293241;
+}
+.portfolio-download-meta {
+  font-size: .85rem;
+  white-space: nowrap;
 }
 .portfolio-gallery {
   box-sizing: border-box;
