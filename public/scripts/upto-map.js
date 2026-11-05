@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const organiseGuides = () => {
         const grid = document.querySelector('.travel-card-grid');
         const groups = {
-            'North America': ['regina', 'vancouver', 'honolulu', 'palo-alto', 'carmel', 'yosemite', 'san-francisco'],
+            'North America': ['regina', 'vancouver', 'honolulu', 'palo-alto', 'carmel', 'yosemite', 'san-francisco', 'oakland'],
             'South America': ['buenos-aires'],
             'Europe': ['paris', 'marseille', 'london', 'stratford'],
             'Asia': ['tokyo', 'naha']
