@@ -1,0 +1,106 @@
+/* Shared sizing for desktop, tablet and phone layouts. */
+:root {
+  --content-width: 1000px;
+  --page-gutter: clamp(16px, 3vw, 40px);
+}
+
+img, video, iframe { max-width: 100%; }
+img { height: auto; }
+main { width: 100%; padding: 40px var(--page-gutter); }
+header, footer { padding: clamp(28px, 4vw, 50px) var(--page-gutter); }
+header nav ul { flex-wrap: wrap; gap: 8px clamp(16px, 3vw, 50px); }
+header nav a { display: inline-flex; align-items: center; min-height: 44px; }
+header h1 { font-size: clamp(2.5rem, 6vw, 3rem); }
+p, li, dd, h1, h2, h3, figcaption { overflow-wrap: anywhere; }
+a:focus-visible, button:focus-visible { outline: 3px solid #f07691; outline-offset: 4px; }
+.contact-links { gap: 8px; }
+.contact-links a { display: inline-flex; align-items: center; justify-content: center; padding: 10px; }
+.contact-links img { width: 50px; height: 50px; }
+
+/* Preserve the centered desktop composition while allowing panels to shrink. */
+.category-title, .info-text, .contact-container, .resume-header,
+.project-info-box { width: 100%; max-width: var(--content-width); }
+.info-section { width: calc(100% - 2 * var(--page-gutter)); }
+.project-grid, .education-grid, .personal-listening {
+  width: 100%;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.project-card, .class-card { min-width: 0; height: auto; }
+.project-card { min-height: 300px; }
+.project-card h3 { font-size: clamp(1.5rem, 3vw, 2rem); }
+.project-card .project-subtitle { font-size: clamp(1.6rem, 3vw, 2rem); }
+.category-title { font-size: clamp(2rem, 4vw, 2.5rem); }
+.category-title p { font-size: .875rem; }
+.skills-grid { grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr)); }
+.banner-container { display: grid; width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.banner-button { width: 100%; height: auto; min-height: 180px; padding: 30px 20px; }
+.photo-container img { width: 100%; object-fit: contain; }
+.text-box { max-width: 100%; padding: clamp(24px, 4vw, 40px) var(--page-gutter); }
+.intro { height: auto; min-height: clamp(360px, 70svh, 760px); }
+.intro > .text-box h1 { font-size: clamp(3.5rem, 10vw, 8rem); font-weight: 400; }
+
+/* Project headings and content share one center line on widescreen monitors. */
+.individual-page { max-width: none; margin: 0 auto; padding: 0; }
+.project-head { width: 100%; padding: 28px var(--page-gutter); }
+.project-title { font-size: clamp(2rem, 5vw, 3rem); }
+.project-head > * { max-width: var(--content-width); }
+.project-info { padding: 0 var(--page-gutter); }
+.project-info-box { min-width: 0; padding: clamp(20px, 3vw, 30px); }
+.project-info-box h3 { font-size: clamp(1.5rem, 4vw, 2rem); }
+.project-slideshow, .graphic-container { width: 100%; min-width: 0; }
+.project-slideshow { max-width: 700px; }
+.project-info-box iframe[src*="youtube.com"] { width: 100%; max-width: 800px; height: auto; aspect-ratio: 16 / 9; }
+.project-links { flex-wrap: wrap; }
+
+/* Personal pages retain their collages and interactive layouts. */
+.intro:has(.intro-overlay) { height: clamp(360px, 70svh, 760px); }
+.intro-overlay { padding: var(--page-gutter); }
+.personal-landing { padding: 24px 0; }
+.landing-content { display: grid; grid-template-columns: minmax(0, 338px) minmax(0, 640px); padding: 0; gap: 24px; }
+.photo-column { width: 100%; min-width: 0; }
+.text-column { min-width: 0; }
+.hover-image-box { width: 100%; height: auto; aspect-ratio: 4 / 5; }
+.camera-wrap { width: min(100%, 920px); }
+.photo-list { width: 100%; max-width: 1000px; }
+.photo-pair { width: 100%; }
+.wear-image { width: min(35%, 300px); height: auto; aspect-ratio: 1; object-fit: cover; }
+.wear-info { min-width: 0; }
+#overlay { width: 100%; height: 100dvh; transform: none; opacity: 0; visibility: hidden; transition: opacity .3s ease, visibility .3s ease; }
+#overlay.active { opacity: 1; visibility: visible; }
+#nav-panel { width: min(100%, 900px); max-height: 100dvh; overflow-y: auto; padding: 72px 24px 32px; visibility: hidden; }
+#nav-panel.open { visibility: visible; }
+#nav-panel nav ul li a { display: block; font-size: clamp(1.5rem, 5vw, 3rem); min-height: 44px; }
+#menu-button { z-index: 1000; }
+
+@media (max-width: 700px) {
+  main { padding-top: 24px; padding-bottom: 24px; }
+  .project-grid, .education-grid, .personal-listening, .banner-container { grid-template-columns: minmax(0, 1fr); gap: 20px; }
+  .project-card { min-height: 0; padding: 24px 20px; }
+  .banner-button { min-height: 140px; }
+  .about-section { padding: 24px var(--page-gutter); }
+  .about-text-box, .info-text, .container { padding: 28px 20px; }
+  .intro-hover { font-size: clamp(2.5rem, 9vw, 4rem); }
+  .resume-header { margin-top: 0; }
+  .resume-header h1, .contact-container h1 { font-size: clamp(2.5rem, 11vw, 4rem); }
+  .resume-header p, .contact-container p, .text-box p { font-size: 1rem; }
+  .resume-card { height: auto; min-height: 200px; }
+  .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .skills-card { padding: 12px 8px; }
+  .education-card, .experience-card { padding: 24px 20px; }
+  .landing-content { grid-template-columns: minmax(0, 1fr); }
+  .photo-column { max-width: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+  .photo-column img { height: 100%; object-fit: cover; }
+  .landing-caption { font-size: 2.25rem; }
+  .photo-pair { flex-direction: column; gap: 20px; margin: 24px auto; }
+  .wear-image { width: 100%; max-width: 400px; align-self: center; }
+  .travel-intro { padding: 36px 20px; }
+  .loving-intro h1 { line-height: 1; }
+  body { background-attachment: scroll; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; }
+}
+
+/* Keep script lettering legible in the personal hero on small screens. */
+.intro-overlay .text-box p { font-size: clamp(1.5rem, 4vw, 2rem); }

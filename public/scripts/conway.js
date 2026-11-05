@@ -118,8 +118,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listener for clicks on the canvas
   canvas.addEventListener('click', (event) => {
     const rect = canvas.getBoundingClientRect();
-    const x = event.clientX - rect.left;
-    const y = event.clientY - rect.top;
+    const x = (event.clientX - rect.left) * canvas.width / rect.width;
+    const y = (event.clientY - rect.top) * canvas.height / rect.height;
     
     const i = Math.floor(y / cellSize);
     const j = Math.floor(x / cellSize);
