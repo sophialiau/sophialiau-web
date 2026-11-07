@@ -26,10 +26,13 @@ document.addEventListener('DOMContentLoaded', () => {
         'fashion killa — a$ap rocky', 'stress cleaning', 'lace', 'spritz o’clock', 'swans',
         'the necklace i always wear (iykyk)', 'brown eyeliner',
         'idk bc i’m an engineer but not that kind', 'ordering sushi in',
-        'grocery shopping as an activity', 'double shot espresso + cinnamon on ice',
+        'double shot espresso + cinnamon on ice',
         'hey girlie pop', 'fun drinkities', 'pumpkin muffins by the novice chef', 'mini skirts',
         'no bc i feel so deeply!', 'dnd 24/7', 'pink', 'hugo spritzes', 'fashion',
-        'heirloom tomatoes'
+        'heirloom tomatoes', 'tuna melts', 'beli the app', 'halloween',
+        'a cool matchbox', 'in & out right after the airport',
+        'vintage victoria’s secret slips', 'specialty grocery stores', 'birthdays',
+        'pink terminal', 'cameron winter', 'peppermint tea', 'lincoln park in the dark'
     ];
 
     const quoted = new Set([
@@ -55,7 +58,10 @@ document.addEventListener('DOMContentLoaded', () => {
         [47, { file: 'trophy.png', alt: 'Department Club of the Year trophy', span: 3, tall: true }],
         [56, { file: 'pcb.png', alt: 'A custom pink printed circuit board', span: 3 }],
         [65, { file: 'loverspoint.png', alt: 'A hand-painted Lovers Point keepsake', span: 3 }],
-        [74, { file: 'p-a-r.png', alt: 'A pain aux raisins pastry', span: 3 }]
+        [74, { file: 'p-a-r.png', alt: 'A pain aux raisins pastry', span: 3 }],
+        [82, { file: 'hotdog.png', alt: 'A hot dog topped with ketchup and mustard', span: 4, wide: true }],
+        [88, { file: 'sfd.png', alt: 'A San Francisco disco card with a disco ball and city landmarks', span: 3 }],
+        [94, { file: 'statebird.png', alt: 'A State Bird Provisions menu marked happy birthday', span: 3, tall: true }]
     ]);
 
     loves.forEach((love, index) => {
